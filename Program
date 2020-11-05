@@ -75,15 +75,12 @@ def LVQ(x,tar):
         #print(d)
         if(d[0]<d[1]):
           t=0
-          #print("winning neuron is ",0)
         else:
           t=1
-          #print("winning neuron is", 1)
         if(t==tar[i]):
           W[t,:]+=lr*(x[i,:]-W[t,:])
         else:
            W[t,:]-=lr*(x[i,:]-W[t,:])
-      #print("Updated weight at epoch ",e,"are ",W)
       e+=1
       #lr=0.5*lr
     return W
